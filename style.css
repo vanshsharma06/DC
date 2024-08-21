@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar-height: 59px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #000000; /* Light background for contrast */
+  
+}
+
+header {
+  position: relative;
+  z-index: 1000; /* Ensures the navbar stays above the carousel */
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  height: var(--navbar-height);
+  background: rgba(6, 6, 6, 0.8); /* Light transparent white background */
+  backdrop-filter: blur(15px); /* Strong blur for the glass effect */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for glassy feel */
+  border-radius: 20px; /* Rounded edges */
+  width: 90%; /* Adjust width as needed */
+  max-width: 1200px; /* Set a maximum width for the navbar */
+  margin: 30px auto; /* Center it horizontally */
+  position: relative;
+  z-index: 2; /* Ensure it is above the carousel */
+}
+
+#navbar .nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 0rem;
+}
+
+#navbar .nav-links a {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(252, 242, 242);
+  padding: 19px 25px;
+  transition: all 0.3s ease;
+}
+
+#nav1 {
+  padding-left: 9rem;
+}
+
+#nav2 {
+  padding-right: 9rem;
+}
+
+
+#navbar .nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Hover effect */
+  border-radius: 78px;
+  color: red;
+}
+
+#navbar .logo {
+  flex: 1; /* Allow the logo to take up space */
+  display: flex;
+  justify-content: center; /* Center the logo */
+}
+
+.logo img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Adjust carousel to go behind the navbar */
+#carouselExample {
+  position: relative;
+  z-index: 1;
+  margin-top: -100px; /* Move carousel up to be partially behind the navbar */
+}
+
+.carousel-item img {
+  height: calc(
+    100vh - var(--navbar-height)
+  ); /* Full height minus navbar height */
+  object-fit: cover;
+}
+
+.card-container {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 10px 0;
+  scroll-snap-type: x mandatory; /* Snap to the nearest card */
+  gap: 10px; /* Space between cards */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  width: 100%; /* Adjust to make the container take full width */
+  max-width: 1500px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+}
+.card-wrapper {
+  flex: 0 0 auto; /* Prevent card from shrinking */
+  width: 280px; /* Adjust based on your desired card width */
+  scroll-snap-align: start; /* Align card to the start of the container */
+}
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effect */
+}
+.card img {
+  height: 400px;
+  object-fit: cover;
+  width: 100%; /* Ensure image covers the card */
+}
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a larger shadow */
+}
+.card-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for a cleaner look */
+}
+
+.cardheading{
+  padding-left: 7rem;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.nav-buttons button {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.nav-buttons button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.bg-teal {
+  background-color: #304146; /* Dark teal */
+}
+
+.text-light-gray {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.text-light-gray:hover {
+  color: #ffdd57; /* Yellow hover effect */
+}
+
+footer h5 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+footer .bi {
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+footer .bi:hover {
+  color: #ffdd57;
+}
